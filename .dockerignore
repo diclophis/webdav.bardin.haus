@@ -1,0 +1,7 @@
+manifest.rb
+Dockerfile.webdav
+Makefile
+build
+test
+vendor
+.bundle
