@@ -71,8 +71,6 @@ spec:
         - "apache2"
         - "-D"
         - "FOREGROUND"
-        #- "sleep"
-        #- "infinity"
         env: &1
         - name: APP_ENV
           value: production
