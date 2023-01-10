@@ -54,13 +54,19 @@ spec:
       volumes:
       - name: run
         emptyDir: {}
+      - name: webdav-fs
+        hostPath:
+          path: /mnt/gaia/webdav
+          type: DirectoryOrCreate
       containers:
       - name: webdav-bardin-haus-app
-        image: webdav.bardin.haus:latest
+        image: webdav.bardin.haus-webdav:latest
         imagePullPolicy: IfNotPresent
         volumeMounts: 
         - mountPath: /var/run/apache2
           name: run
+        - mountPath: /var/incoming
+          name: webdav-fs
         ports:
         - containerPort: 8080
         resources:
